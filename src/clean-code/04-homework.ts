@@ -11,10 +11,13 @@
     //     } else {
     //         return false;
     //     } 
-
     
+    function isRedFruit( fruit: string ): boolean {
+            //mal código
+            let redFruits: string[] = [ 'manzana','cereza','ciruela' ];
+            return redFruits.includes( fruit );
     
-   
+    }
 
     // Simplificar esta función
     // switch? Object literal? validar posibles colores
@@ -31,57 +34,68 @@
     //             return ['moras','uvas'];
     //         default:
     //             throw Error('the color must be: red, yellow, purple');
-        // }
+    // 
 
-    type FruitColor = 'red' | 'green' | 'blue';
+        type FruitColor = 'red'|'yellow'|'purple';
 
-    function getFruitsByColor( color : FruitColor ): string[] {
-        
-        const fruitsByColor = {
-            red: ['manzana', 'fresa'],
-            yellow: ['piña', 'banana'],
-            purple: ['moras', 'uvas']
-        };
+        function getFruitsByColor( color: FruitColor ): string[] {
 
-        if ( !Object.keys( fruitsByColor ).includes( color )) throw Error( 'the color must be: red, green, blue' );
-    }
+            const fruitsByColor = {
+                red:    [ 'manzana','fresa' ],
+                yellow: ['piña','banana'],
+                purple: ['moras','uvas'],
+                
+            };
 
+            if (!Object.keys(fruitsByColor).includes(color)) {
+            throw Error('the color must be');
+            
+        }
 
-}
-    
+        }
 
 
     // Simplificar esta función
     let isFirstStepWorking  = true;
     let isSecondStepWorking = true;
     let isThirdStepWorking  = true;
-    let isFourthStepWorking = true;
+    let isFourthStepWorking = false;
 
     function workingSteps() {
 
-        //mal estructura del código
-       if( isFirstStepWorking === true ) {
-            if( isSecondStepWorking === true ) {
-                if( isThirdStepWorking === true ) {
-                    if( isFourthStepWorking === true ) {
-                        return 'Working properly!';
-                    }
-                    else {
-                        return 'Fourth step broken.';
-                    }
-                }
-                else {
-                    return 'Third step broken.';
-                }
-            }
-            else {
-                return 'Second step broken.';
-            }
-        }
-        else {
-            return 'First step broken.';
-        }
-    }
+        if ( !isFirstStepWorking )  return 'First Step broken';
+        if ( !isSecondStepWorking ) return 'Second Step broken';
+        if ( !isThirdStepWorking )  return 'Third Step broken';
+        if ( !isFourthStepWorking ) return 'Fourth Step broken';
+
+
+    return 'Working properly';
+
+
+
+    //     //mal estructura del código
+    //    if( isFirstStepWorking === true ) {
+    //         if( isSecondStepWorking === true ) {
+    //             if( isThirdStepWorking === true ) {
+    //                 if( isFourthStepWorking === true ) {
+    //                     return 'Working properly!';
+    //                 }
+    //                 else {
+    //                     return 'Fourth step broken.';
+    //                 }
+    //             }
+    //             else {
+    //                 return 'Third step broken.';
+    //             }
+    //         }
+    //         else {
+    //             return 'Second step broken.';
+    //         }
+    //     }
+    //     else {
+    //         return 'First step broken.';
+    //     }
+    } //fin
 
     // isRedFruit
     console.log({ isRedFruit: isRedFruit('manzana2'), fruit: 'manzana2' }); // true
